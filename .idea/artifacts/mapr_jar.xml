@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="mapr:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/mapr_jar</output-path>
+    <root id="archive" name="mapr.jar">
+      <element id="module-output" name="mapr" />
+    </root>
+  </artifact>
+</component>
