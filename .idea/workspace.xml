@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61b7a809-243f-4761-a988-a16017c74ff5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/mapr_jar/mapr.jar" afterPath="$PROJECT_DIR$/out/artifacts/mapr_jar/mapr.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyx/mapr/flow/FlowBean.class" afterPath="$PROJECT_DIR$/target/classes/com/yyx/mapr/flow/FlowBean.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyx/mapr/flow/FlowCount$FlowCountMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/yyx/mapr/flow/FlowCount$FlowCountMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyx/mapr/flow/FlowCount$FlowCountReducer.class" afterPath="$PROJECT_DIR$/target/classes/com/yyx/mapr/flow/FlowCount$FlowCountReducer.class" />
@@ -505,7 +504,7 @@
       <updated>1511016337401</updated>
       <workItem from="1511016348229" duration="10824000" />
       <workItem from="1511068093372" duration="14470000" />
-      <workItem from="1511110842278" duration="3274000" />
+      <workItem from="1511110842278" duration="3420000" />
     </task>
     <servers />
   </component>
@@ -530,7 +529,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28568000" />
+    <option name="totallyTimeSpent" value="28714000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
