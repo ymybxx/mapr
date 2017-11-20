@@ -1,18 +1,31 @@
 package com.yyx.mapr.flow;
 
 import org.apache.hadoop.io.Writable;
+import org.apache.hadoop.io.WritableComparable;
 
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class FlowBean implements Writable {
+public class FlowBean implements WritableComparable<FlowBean> {
 
 
     public FlowBean() {
 
     }
 
+    public int compareTo(FlowBean o) {
+        long thisValue = this.sumFlow;
+        long thatValue = o.sumFlow;
+        return (thisValue<thatValue ? -1 : (thisValue==thatValue ? 0 : 1));
+    }
+
+    public void set(long upFlow, long dFlow) {
+        this.upFlow = upFlow;
+        this.dFlow = dFlow;
+        this.sumFlow = upFlow + dFlow;
+
+    }
     //序列化方法
     public void write(DataOutput out) throws IOException {
         out.writeLong(upFlow);

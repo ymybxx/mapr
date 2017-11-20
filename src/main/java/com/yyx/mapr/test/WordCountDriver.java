@@ -1,5 +1,6 @@
 package com.yyx.mapr.test;
 
+import com.yyx.mapr.flow.ProvincePartioner;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -27,6 +28,10 @@ public class WordCountDriver {
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
 
+        //自定义数据分区
+        job.setPartitionerClass(ProvincePartioner.class);
+        //设置reducetask分区数量
+        job.setNumReduceTasks(5);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);

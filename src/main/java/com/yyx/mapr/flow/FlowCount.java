@@ -1,11 +1,7 @@
 package com.yyx.mapr.flow;
 
-import com.yyx.mapr.test.WordCountDriver;
-import com.yyx.mapr.test.WordCountMapper;
-import com.yyx.mapr.test.WordCountReducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -58,6 +54,8 @@ public class FlowCount {
 
 
     public static void main(String[] args) throws Exception {
+
+
         Configuration conf = new Configuration();
 
         Job job = Job.getInstance(conf);
@@ -76,8 +74,11 @@ public class FlowCount {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowBean.class);
 
+        job.setPartitionerClass(ProvincePartioner.class);
+        job.setNumReduceTasks(5);
 
         //指定输入输入输出路径
+
         FileInputFormat.setInputPaths(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
