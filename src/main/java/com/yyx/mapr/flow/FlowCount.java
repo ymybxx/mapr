@@ -74,8 +74,8 @@ public class FlowCount {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowBean.class);
 
-        job.setPartitionerClass(ProvincePartioner.class);
-        job.setNumReduceTasks(5);
+        //job.setPartitionerClass(ProvincePartioner.class);
+        //job.setNumReduceTasks(5);
 
         //指定输入输入输出路径
 

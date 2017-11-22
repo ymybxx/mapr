@@ -1,9 +1,9 @@
 package com.yyx.mapr.test;
 
-import com.yyx.mapr.flow.ProvincePartioner;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -16,22 +16,29 @@ public class WordCountDriver {
     public static void main(String[] args) throws Exception{
         Configuration conf = new Configuration();
 
+//        conf.set("mapreduce.framwork.name", "local");
+//
+//        conf.set("fs.defaultFs","file:///");
+
+        conf.set("mapreduce.framework.name","yarn");
+        conf.set("yarn.resourcemanager.homtname","hadoop0");
+        conf.set("fs.default","hdfs://hadoop0:8020");
+
+
         Job job = Job.getInstance(conf);
 
-
-        job.setJarByClass(WordCountDriver.class);
+        job.setJar("/Users/inequality/IdeaProjects/mapr/out/artifacts/mapr_jar/mapr.jar");
+        //job.setJarByClass(WordCountDriver.class);
         //设置调用类
         job.setMapperClass(WordCountMapper.class);
 
         job.setReducerClass(WordCountReducer.class);
 
         job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(IntWritable.class);
+        job.setMapOutputValueClass(LongWritable.class);
 
         //自定义数据分区
-        job.setPartitionerClass(ProvincePartioner.class);
         //设置reducetask分区数量
-        job.setNumReduceTasks(5);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);

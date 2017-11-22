@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * 继承map类
  */
-public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class WordCountMapper extends Mapper<LongWritable, Text, Text, LongWritable> {
 
     /**
      * map阶段的业务逻辑
@@ -22,7 +22,7 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
      */
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        IntWritable one = new IntWritable(1);
+        LongWritable one = new LongWritable(1);
         //获取每行的内容
         String line = value.toString();
         //切分单词
