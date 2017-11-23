@@ -20,6 +20,7 @@ import org.apache.hadoop.yarn.webapp.hamlet.Hamlet;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -63,6 +64,7 @@ public class FriendsPre {
 
 
                 usersList.add(usrText);
+                Collections.sort(usersList);
             }
 
             for (int i = 0; i < usersList.size() - 1; i++) {
