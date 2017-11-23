@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class FlowTest {
@@ -24,12 +25,10 @@ public class FlowTest {
         list.add("333");
         list.add("444");
 
-        Iterable<String> iterable  = (Iterable<String>) list.iterator();
+        Iterator<String> iterable  = (Iterator<String>) list.iterator();
         List<String> re = new ArrayList<String>();
         String r  = null;
-        for (String s : iterable) {
-            re.add(s);
-        }
+
 
         System.out.println(re);
 
